@@ -1,6 +1,7 @@
 import Expresence from "../models/ExpresenceModel.js";
 import dateFormat from 'dateformat';
 import Users from "../models/UserModel.js";
+import { Op } from "sequelize";
 
 
 export const getDataExpresence = async (req, res) => {
@@ -51,9 +52,11 @@ export const CheckInOut = async (req, res) => {
         const checkExpresence =  await Expresence.findOne({
             attributes: ['id','userId' ,'type', 'waktu']
         },{
-            where: {
-                "userId":userId
-                // "type":type
+            where:{ 
+             [Op,and]:[
+              {"userId":userId}, 
+              {"type":type}
+             ]
             }
         });
 
