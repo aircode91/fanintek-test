@@ -1,0 +1,41 @@
+POST http://localhost:3000/api/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email":"bayu@email.com",
+    "password":"password"
+}
+
+###
+# Register
+POST  http://localhost:3000/api/users
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Ananda Bayu",
+    "email":"bayu@email.com",
+    "npp":"12345",
+    "npp_supervisor":"11111",
+    "password":"password",
+    "confPassword":"password"
+}
+
+###
+# Refresh Token
+GET http://localhost:3000/api/token
+Accept: application/json
+Content-Type: application/json
+
+
+###
+# ChekInOut
+POST http://localhost:3000/api/checkInOut
+Accept: application/json
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJBbmFuZGEgQmF5dSIsImVtYWlsIjoiYmF5dUBlbWFpbC5jb20iLCJpYXQiOjE2NDQ0Nzk0ODAsImV4cCI6MTY0NDQ3OTU0MH0.dGe51TjZ-VS4tNjVM8r8cnoZWqIlfBFJwSbGGsdSLqY"
+
+{
+    "type":"IN"
+}

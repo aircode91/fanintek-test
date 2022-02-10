@@ -1,8 +1,9 @@
 import {Sequelize} from "sequelize";
 
-const db = new Sequelize('meteor_test','root','',{
+const db = new Sequelize('services','postgres','bismillah',{
     host: "localhost",
-    dialect: "mysql"
+    dialect: "postgres",
+    port:5432
 });
 
 export default db;
